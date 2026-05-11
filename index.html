@@ -6,10 +6,30 @@
   <title>Marthington | Family Planning Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-pink-50 text-gray-800">
+<body class="bg-pink-50 text-gray-800 scroll-smooth">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-pink-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <div class="text-2xl font-bold text-pink-700">
+        Marthington
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <a href="#home" class="hover:text-pink-700 transition duration-300">Home</a>
+        <a href="#family-planning" class="hover:text-pink-700 transition duration-300">Family Planning</a>
+        <a href="#about" class="hover:text-pink-700 transition duration-300">About</a>
+        <a href="#services" class="hover:text-pink-700 transition duration-300">Services</a>
+        <a href="#faq" class="hover:text-pink-700 transition duration-300">FAQ</a>
+        <a href="#contact" class="hover:text-pink-700 transition duration-300">Contact</a>
+      </nav>
+
+    </div>
+  </header>
 
   <!-- HERO SECTION -->
-  <section class="bg-gradient-to-r from-pink-100 to-pink-50">
+  <section id="home" class="bg-gradient-to-r from-pink-100 to-pink-50">
     <div class="max-w-6xl mx-auto px-6 py-20 text-center">
       <div class="inline-block bg-pink-200 text-pink-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
         Licensed Midwife • Family Planning Educator & Provider
@@ -35,16 +55,28 @@
   </section>
 
   <!-- EDUCATIONAL SECTION -->
-  <section class="max-w-6xl mx-auto px-6 py-20">
+  <section id="family-planning" class="max-w-6xl mx-auto px-6 py-20">
 
-    <div class="text-center mb-14">
-      <h2 class="text-5xl font-bold text-pink-700 mb-6">
-        Understanding Family Planning
-      </h2>
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
 
-      <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-        Family planning helps individuals and couples make informed decisions about pregnancy, child spacing, and reproductive health using safe and suitable contraceptive methods.
-      </p>
+      <div>
+        <h2 class="text-5xl font-bold text-pink-700 mb-6">
+          Understanding Family Planning
+        </h2>
+
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Family planning helps individuals and couples make informed decisions about pregnancy, child spacing, and reproductive health using safe and suitable contraceptive methods.
+        </p>
+
+        <p class="text-lg text-gray-600 leading-relaxed">
+          With the right guidance, women and families can confidently choose options that support their health, goals, and future plans.
+        </p>
+      </div>
+
+      <div>
+        <img src="images/martha.jpg" alt="Marthington Family Planning" class="rounded-3xl shadow-xl w-full object-cover border border-pink-100">
+      </div>
+
     </div>
 
     <div class="grid md:grid-cols-3 gap-8 mb-16">
@@ -128,6 +160,7 @@
   </section>
 
   <!-- ABOUT SECTION -->
+  <section id="about"
   <section class="max-w-6xl mx-auto px-6 py-20">
     <div class="grid md:grid-cols-2 gap-12 items-center">
 
@@ -163,7 +196,7 @@
   </section>
 
   <!-- SERVICES SECTION -->
-  <section class="bg-white py-20">
+  <section id="services" class="bg-white py-20">
     <div class="max-w-6xl mx-auto px-6">
 
       <div class="text-center mb-14">
@@ -269,7 +302,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
+  <section id="faq" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="text-center mb-14">
       <h2 class="text-5xl font-bold text-pink-700 mb-4">
@@ -313,7 +346,7 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section class="bg-pink-700 text-white py-20 text-center">
+  <section id="contact" class="bg-pink-700 text-white py-20 text-center">
     <div class="max-w-4xl mx-auto px-6">
 
       <h2 class="text-5xl font-bold mb-6">
