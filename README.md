@@ -14,6 +14,7 @@ npm start
 
 Parcel serves the client at `http://localhost:1234`.
 Copy `client/.env.example` to `client/.env` if the API is hosted at a different address. `API_URL` is public client configuration, not a place for secrets.
+The original root `index.html` uses a locally compiled Tailwind stylesheet. Regenerate it after changing Tailwind classes in that page with `cd client && npm run build:static`; this avoids loading Tailwind from its development CDN in production.
 
 ### API
 

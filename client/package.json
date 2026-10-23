@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "parcel build public/index.html --dist-dir dist"
+    "build": "parcel build public/index.html --dist-dir dist",
+    "build:static": "tailwindcss -i src/styles.css -o ../styles.css --content ../index.html --minify"
   },
   "engines": {
     "node": ">=20"
