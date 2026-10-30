@@ -59,6 +59,10 @@ The super-admin practice dashboard includes **System settings** for a safe runti
 
 Change server environment variables in the Render API service's **Environment** settings, then restart or redeploy the API. Change the public client `API_URL` in the Vercel project's **Settings → Environment Variables**, then redeploy the client. Do not enter MongoDB URIs, passwords, or signing secrets into the application UI or client-side environment variables. A MongoDB URI change takes effect after restarting the API process.
 
+### Vercel deployment
+
+The repository root contains `vercel.json`, which explicitly installs and builds the React application in `client/` and deploys `client/dist`. This prevents Vercel from serving the legacy root static `index.html`. Configure `API_URL` in **Vercel → Project → Settings → Environment Variables** for Production, Preview, and Development as needed, then redeploy. The API URL must be the public Render base URL ending in `/api`.
+
 ## Scope and safety
 
 This is an initial implementation, not a production-ready clinical system. Appointment requests are not connected to a calendar and do not prevent double-booking. It does not yet include staff-account management in the UI, consent evidence/withdrawal records, audit logging, message delivery/follow-up automation, patient portal, chatbot/AI, or security/privacy compliance review. Do not enter real patient health information or rely on it for care delivery until the relevant safeguards, legal requirements, and operational procedures have been independently reviewed. Configure secrets through the hosting provider and never commit `.env` files.
