@@ -35,7 +35,10 @@ const defaultServices = [
 
 export default function App() {
   const [view, setView] = useState("home");
-  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  const [sidebarExpanded, setSidebarExpanded] = useState(() => {
+    const savedPreference = window.localStorage.getItem("sidebarExpanded");
+    return savedPreference === null ? true : savedPreference === "true";
+  });
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [session, setSession] = useState(null);
   const [branding, setBranding] = useState({
@@ -81,6 +84,10 @@ export default function App() {
       });
     return () => controller.abort();
   }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("sidebarExpanded", String(sidebarExpanded));
+  }, [sidebarExpanded]);
 
   useEffect(() => {
     document.title = `${branding.name} | Family & maternal care`;
@@ -146,7 +153,7 @@ export default function App() {
             <Menu size={22} />
           </button>
           {branding.logoDataUrl ? (
-            <img alt="" className="h-9 w-9 rounded-lg object-contain" src={branding.logoDataUrl} />
+            <img alt={`${branding.name} logo`} className="h-9 w-9 rounded-lg object-contain" src={branding.logoDataUrl} />
           ) : (
             <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-100 text-brand-700">
               <Heart fill="currentColor" size={17} />

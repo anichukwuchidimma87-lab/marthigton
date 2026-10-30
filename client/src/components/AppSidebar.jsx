@@ -7,8 +7,7 @@ import {
   LogOut,
   Megaphone,
   MessageCircle,
-  PanelLeftClose,
-  PanelLeftOpen,
+  Menu,
   Settings,
   UserRound,
   X,
@@ -88,12 +87,13 @@ export default function AppSidebar({
             )}
           </button>
           <button
-            aria-label={mobileOpen ? "Close sidebar" : expanded ? "Minimize sidebar" : "Expand sidebar"}
-            className={`hidden rounded-xl p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900 md:inline-flex ${expanded ? "" : "absolute -right-3 top-6 z-10 border border-slate-200 bg-white shadow-sm"}`}
+            aria-label={expanded ? "Collapse sidebar" : "Expand sidebar"}
+            className={`hidden rounded-xl p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900 md:inline-flex ${expanded ? "" : "absolute -right-3 top-[68px] z-10 border border-slate-200 bg-white shadow-sm"}`}
             onClick={onToggle}
+            title={expanded ? "Collapse sidebar" : "Expand sidebar"}
             type="button"
           >
-            {expanded ? <PanelLeftClose size={19} /> : <PanelLeftOpen size={19} />}
+            <Menu size={19} />
           </button>
           <button
             aria-label="Close sidebar"
@@ -171,7 +171,7 @@ export default function AppSidebar({
 function BrandMark({ brand }) {
   return brand.logoDataUrl ? (
     <img
-      alt=""
+      alt={`${brand.name} logo`}
       className="h-11 w-11 shrink-0 rounded-xl object-contain"
       src={brand.logoDataUrl}
     />
